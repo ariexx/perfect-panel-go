@@ -9,6 +9,14 @@ func main() {
 		AppName: "Perfect Panel",
 	})
 
+	app.Route("/api", func(api fiber.Router) {
+		//api v1
+		v1 := api.Group("/v1")
+		v1.Route("/auth", func(auth fiber.Router) {
+
+		})
+	})
+
 	err := app.Listen(":3000")
 	if err != nil {
 		panic(err)
